@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html> <!--Ce code est le bare-bone de l'application : Egalement considéré comme la page du client au serveur JS-->
+
+<title>NOLIMIT</title>
+<head>
+<script src="http://simplewebrtc.com/latest.js"></script>
+</head>
+
+<body>
+<center><h1>RTC NO LIMIT DAKAR</h1></center>
+<center><p> URL de votre Salon : <br> <code id="url">...192.168.1.13:2016</code> </p></center>
+
+
+<div id="localVideo" muted></div>
+<div id="remoteVideo"></div>
+
+<!-- Le code pour l'activation de la fonctionnalité vidéo rtc -->
+<script> <!-- Il s'agit de l'ajout du script de la librairie SimpleWebRTC  --> 
+var webrtc = new SimpleWebRTC({
+	localVideoEl: 'localVideo', //L'instruction qui permet de lancer notre cam locale
+	remoteVideosEl: 'remoteVideo', //L'instruction qui permet de partager la video locale à distance
+	autoRequestMedia: true //Demande d'utilisation de la webcam
+});
+
+webrtc.on('readyToCall', function () {
+	webrtc.joinRoom('My room name');
+});
+</script>
+
+
+     <script src="js/lib/adapter.js"></script> 
+	 <script src="js/main.js"></script>
+</body>
+</html>

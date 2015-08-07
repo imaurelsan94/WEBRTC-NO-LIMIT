@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="keywords" content="JavaScript, NOLIMIT" />
+     <meta name="description" content="WEB RTC" />
+     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+		 
+        <title>NOLIMIT</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+	
+    <body>
+        <h1>RTC NO LIMIT DAKAR</h1>
+
+        <p>
+            URL de votre Salon : <br>
+            <code id="url">...</code>
+        </p>
+
+        <video class="camera" autoplay></video> <!--code d'activation auto de la camera-->
+        
+		<div class="controls">
+            <canvas id="photo" style="width: 200px; height: 150px; border: 1px solid #ccc;"></canvas>
+            <p>
+                <button id="snap">Capturer</button>----<button id="send">Envoyer</button> 
+						<br>           - OU - <br>
+                <button id="snapAndSend">Capturer & Envoyer</button>
+            </p>
+        </div>
+
+        <div class="incoming">
+            <h2>Photos recues</h2>
+            <div id="trail"></div>
+        </div>
+
+     <script src="/socket.io/socket.io.js"></script>
+     <script src="js/lib/adapter.js"></script> 
+	 <script src="js/main.js"></script>
+
+    </body>
+</html>
